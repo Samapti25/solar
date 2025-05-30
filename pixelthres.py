@@ -15,8 +15,8 @@ import sunpy.timeseries
 import scipy.ndimage as ndimage
 from scipy.ndimage import label
 
-folder_path = "/home/anu/Desktop/samapti/carrington"
-save_dir= "/home/anu/Desktop/samapti/carrington/pixelthresimage"
+folder_path = "/home/samapti-lakshan/carrington"
+save_dir= "/home/samapti-lakshan/carrington/pixelthresimage"
 files = os.listdir(folder_path)
 fits_files = glob.glob(os.path.join(folder_path, '*.fits')) 
 for file in fits_files:
@@ -32,7 +32,7 @@ for file in fits_files:
 		sin_lat=np.linspace(-1,1,ny)
 		latitude=np.arcsin(sin_lat)*(180/np.pi)
 		
-		threshold=200
+		threshold=100
 		binary_mask=np.abs(data)>threshold
 		
 		fig = plt.figure()

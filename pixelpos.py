@@ -32,7 +32,7 @@ for file in fits_files:
 		sin_lat=np.linspace(-1,1,ny)
 		latitude=np.arcsin(sin_lat)*(180/np.pi)
 		
-		threshold=200
+		threshold=100
 		binary_mask=np.abs(data)>threshold
 		labeled_array, num_features = label(binary_mask)
 		

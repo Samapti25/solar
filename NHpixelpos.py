@@ -61,14 +61,18 @@ for file in fits_files:
 		sorted_indices= np.argsort(lon)
 		lon_sorted=lon[sorted_indices]
 		lat_sorted= lat[sorted_indices]
-		output=np.column_stack((lat,lon))
-		output_sorted= np.column_stack((lat_sorted, lon_sorted))
+		output_lat=np.column_stack((lat_sorted))
+		output= np.column_stack((lat_sorted, lon_sorted))
 		
 		
 		base_name = os.path.basename(file).replace('.fits', '')
-		txt_name= f" {base_name}_NHpixelpos_sorted.txt"
-		txt= os.path.join(save_dir, txt_name)
-		np.savetxt(txt,output_sorted)
+		txt_name1= f" {base_name}_NHpixelpos_lat.txt"
+		txt1= os.path.join(save_dir, txt_name1)
+		np.savetxt(txt1,output_lat)
+		txt_name2= f" {base_name}_NHpixelpos.txt"
+		txt2= os.path.join(save_dir, txt_name2)
+		np.savetxt(txt2,output)
+		
 		
 		
 		

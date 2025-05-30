@@ -15,8 +15,8 @@ import sunpy.timeseries
 import scipy.ndimage as ndimage
 from scipy.ndimage import label
 
-folder_path = "/home/anu/Desktop/samapti/carrington"
-save_dir= "/home/anu/Desktop/samapti/carrington/pixelimage"
+folder_path = "/home/samapti-lakshan/carrington"
+save_dir= "/home/samapti-lakshan/carrington/pixelimage"
 files = os.listdir(folder_path)
 fits_files = glob.glob(os.path.join(folder_path, '*.fits')) 
 for file in fits_files:
